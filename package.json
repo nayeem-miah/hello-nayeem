@@ -1,0 +1,16 @@
+{
+  "name": "hello-nayeem",
+  "version": "1.0.1",
+  "description": "A simple CLI introduction for MD Nayeem Miah",
+  "main": "index.js",
+  "bin": {
+    "hello-nayeem": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["cli", "nayeem", "hello-nayeem", "developer"],
+  "author": "MD Nayeem Miah",
+  "license": "ISC",
+  "type": "commonjs"
+}

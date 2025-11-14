@@ -1,6 +1,6 @@
 {
   "name": "hello-nayeem",
-  "version": "1.0.4",
+  "version": "1.0.8",
   "description": "A simple CLI introduction for MD Nayeem Miah",
   "main": "index.js",
   "bin": {
@@ -19,6 +19,6 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "hello-nayeem": "^1.0.3"
+    "hello-nayeem": "^1.0.7"
   }
 }

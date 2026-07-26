@@ -1,0 +1,5 @@
+# Files to exclude from npm package
+messages.txt
+*.log
+.env
+.gitignore

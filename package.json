@@ -1,7 +1,7 @@
 {
   "name": "hello-nayeem",
-  "version": "2.1.0",
-  "description": "An interactive CLI profile card for MD Nayeem Miah — Full Stack Developer",
+  "version": "3.0.0",
+  "description": "An interactive CLI portfolio for MD Nayeem Miah — Full Stack Developer. Features arrow navigation, search, projects, education, contact form & password-protected inbox.",
   "main": "index.js",
   "bin": {
     "hello-nayeem": "index.js"

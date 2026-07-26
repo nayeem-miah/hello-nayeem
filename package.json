@@ -1,6 +1,6 @@
 {
   "name": "hello-nayeem",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "An interactive CLI portfolio for MD Nayeem Miah — Full Stack Developer. Features arrow navigation, search, projects, education, contact form & password-protected inbox.",
   "main": "index.js",
   "bin": {

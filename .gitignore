@@ -1,0 +1,4 @@
+messages.txt
+node_modules/
+*.log
+.env

@@ -2,8 +2,8 @@ name: Publish to npm
 
 on:
   push:
-    branches:
-      - main
+    tags:
+      - 'v*'   # শুধু v3.0.1, v3.1.0 এরকম tag push করলেই publish হবে
 
 jobs:
   publish:

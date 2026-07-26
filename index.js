@@ -98,11 +98,8 @@ const PROJECTS = [
 // ─── Section Content Generators ───────────────────────────────────────────────
 function generateProjectsContent() {
   const div = paint(c.bBlack, '  ' + '─'.repeat(60));
-  const hdiv = paint(c.bBlack, '\n  ' + '═'.repeat(60) + '\n');
-  let out = `
-  ${bold(c.bGreen, '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')}
-  ${bold(c.bYellow, '  🚀  SELECTED PROJECTS')}
-  ${bold(c.bGreen, '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')}\n`;
+  const hdiv = paint(c.bBlack, '\n  ' + '─'.repeat(60) + '\n');
+  let out = `\n  ${bold(c.bYellow, '─── [ 🚀 SELECTED PROJECTS ] ──────────────────────────────────────────')}\n`;
 
   PROJECTS.forEach((p, idx) => {
     out += `
@@ -110,12 +107,11 @@ function generateProjectsContent() {
   ${div}
   ${paint(c.bWhite, p.description)}
 
-  ${paint(c.bBlack, '  🔧')} ${bold(c.bMagenta, 'Tech Stack:')}
-  ${p.tech.map(t => paint(c.bMagenta, `  ◈ ${t}`)).join('\n')}
+  ${paint(c.bBlack, '  •')} ${bold(c.bMagenta, 'Tech Stack:')} ${paint(c.bWhite, p.tech.join(' • '))}
 
-  ${bold(c.bBlue, '  🖥  Client :')} ${paint(c.bCyan, p.clientCode)}
-  ${bold(c.bBlue, '  ⚙️  Server :')} ${paint(c.bCyan, p.serverCode)}
-  ${bold(c.bGreen, '  🌐 Live   :')} ${bold(c.bGreen, p.liveLink)}`;
+  ${bold(c.bBlue, '    Client :')} ${paint(c.bCyan, p.clientCode)}
+  ${bold(c.bBlue, '    Server :')} ${paint(c.bCyan, p.serverCode)}
+  ${bold(c.bGreen, '    Live   :')} ${bold(c.bGreen, p.liveLink)}`;
     if (idx < PROJECTS.length - 1) out += hdiv;
   });
 
@@ -124,32 +120,31 @@ function generateProjectsContent() {
 
 function generateEducationContent() {
   return `
-  ${bold(c.bYellow, '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')}
-  ${bold(c.bYellow, '  🎓  EDUCATION & BACKGROUND')}
-  ${bold(c.bYellow, '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')}
+  ${bold(c.bYellow, '─── [ 🎓 EDUCATION & BACKGROUND ] ────────────────────────────────────')}
 
-  ${bold(c.bCyan, '  🏛  Moulvibazar polytechnic Institute')}
-  ${paint(c.bWhite, '      Diploma in Engineering')}
-  ${paint(c.bMagenta, '      Department: CST (Computer Science & Technology)')}
-  ${paint(c.bBlack, '      Duration  : 2022 – 2026')}
-  ${paint(c.bGreen, '      CGPA      : 3.39 / 4.00')}
+  ${bold(c.bCyan, '  Moulvibazar Polytechnic Institute')}
+  ${paint(c.bWhite, '  Diploma in Engineering')}
+  ${paint(c.bMagenta, '  Department: Computer Science & Technology (CST)')}
+  ${paint(c.bBlack, '  Duration  : 2022 – 2026')}
+  ${paint(c.bGreen, '  CGPA      : 3.39 / 4.00')}
 
   ${paint(c.bBlack, '  ' + '─'.repeat(58))}
 
-  ${bold(c.bCyan, '  🏫  Shahgonj High School and College')}
-  ${paint(c.bWhite, '      SSC (Secondary School Certificate)')}
-  ${paint(c.bMagenta, '      Group: Science')}
-  ${paint(c.bBlack, '      Year  : 2021')}
-  ${paint(c.bGreen, '      GPA   : 4.33 / 5.00')}
+  ${bold(c.bCyan, '  Shahgonj High School and College')}
+  ${paint(c.bWhite, '  SSC (Secondary School Certificate)')}
+  ${paint(c.bMagenta, '  Group: Science')}
+  ${paint(c.bBlack, '  Year  : 2021')}
+  ${paint(c.bGreen, '  GPA   : 4.33 / 5.00')}
 
   ${paint(c.bBlack, '  ' + '─'.repeat(58))}
 
-  ${bold(c.bMagenta, '  📚  Self-Learning & Online Courses')}
-  ${paint(c.bYellow, '  ◆')} ${paint(c.white, 'Complete Web Development  —  Programming Hero')}
-  ${paint(c.bYellow, '  ◆')} ${paint(c.white, 'Advanced TypeScript & JavaScript')}
-  ${paint(c.bYellow, '  ◆')} ${paint(c.white, 'Backend Engineering: Node.js, Express, Prisma')}
-  ${paint(c.bYellow, '  ◆')} ${paint(c.white, 'Database Design: MongoDB & PostgreSQL')}
-  ${paint(c.bYellow, '  ◆')} ${paint(c.white, 'Microservices & Docker (ongoing)')}`;
+  ${bold(c.bMagenta, '  Self-Learning & Professional Courses')}
+  ${paint(c.bYellow, '  •')} ${paint(c.white, 'Complete Web Development  —  Programming Hero')}
+  ${paint(c.bYellow, '  •')} ${paint(c.white, 'Advanced TypeScript & JavaScript')}
+  ${paint(c.bYellow, '  •')} ${paint(c.white, 'Backend Engineering: Node.js, Express, Prisma')}
+  ${paint(c.bYellow, '  •')} ${paint(c.white, 'Database Design: MongoDB & PostgreSQL')}
+  ${paint(c.bYellow, '  •')} ${paint(c.white, 'Microservices & Docker')}
+`;
 }
 
 // ─── Section Data ────────────────────────────────────────────────────────────
@@ -157,9 +152,7 @@ const SECTIONS = [
   {
     id: 1, icon: '📜', name: 'Bio', color: c.bCyan,
     content: () => `
-  ${bold(c.bCyan, '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')}
-  ${bold(c.bYellow, '  📜  ABOUT ME')}
-  ${bold(c.bCyan, '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')}
+  ${bold(c.bCyan, '─── [ 📜 ABOUT ME ] ──────────────────────────────────────────────────')}
 
   ${paint(c.bWhite, 'I am a passionate ')}${bold(c.bCyan, 'Full Stack Developer')}${paint(c.bWhite, ' currently working')}
   ${paint(c.bWhite, 'as a ')}${bold(c.bMagenta, 'Backend Developer')}${paint(c.bWhite, ' at ')}${bold(c.bYellow, 'SM TECHNOLOGY')}${paint(c.bWhite, ', Dhaka.')}
@@ -168,153 +161,112 @@ const SECTIONS = [
   ${paint(c.bWhite, 'APIs, and modern web apps using Node.js, Express.js, TypeScript,')}
   ${paint(c.bWhite, 'MongoDB, and PostgreSQL.')}
 
-  ${paint(c.bGreen, '  ✦')} ${paint(c.white, '1+ year of professional experience')}
-  ${paint(c.bGreen, '  ✦')} ${paint(c.white, 'Passionate about Backend Engineering')}
-  ${paint(c.bGreen, '  ✦')} ${paint(c.white, 'Exploring Microservices & Docker')}
-  ${paint(c.bGreen, '  ✦')} ${paint(c.white, 'Clean, maintainable code is my priority')}
-  ${paint(c.bGreen, '  ✦')} ${paint(c.white, 'Always learning new technologies')}
-  ${paint(c.bGreen, '  ✦')} ${paint(c.white, 'Open to collaboration and new opportunities')}
+  ${paint(c.bGreen, '  •')} ${paint(c.white, '1+ year of professional engineering experience')}
+  ${paint(c.bGreen, '  •')} ${paint(c.white, 'Focused on scalable backend architecture & security')}
+  ${paint(c.bGreen, '  •')} ${paint(c.white, 'Exploring Microservices, Docker & Cloud Infrastructure')}
+  ${paint(c.bGreen, '  •')} ${paint(c.white, 'Prioritizing clean, maintainable & self-documenting code')}
+  ${paint(c.bGreen, '  •')} ${paint(c.white, 'Open to global remote opportunities & technical collaborations')}
 `,
   },
   {
     id: 2, icon: '🌟', name: 'Profession', color: c.bMagenta,
     content: () => `
-  ${bold(c.bMagenta, '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')}
-  ${bold(c.bYellow, '  🌟  PROFESSION & ROLE')}
-  ${bold(c.bMagenta, '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')}
+  ${bold(c.bMagenta, '─── [ 🌟 PROFESSION & ROLE ] ──────────────────────────────────────────')}
 
-  ${bold(c.bCyan, '  Current Role:')}
-  ${paint(c.bWhite, '  Backend Developer')}
+  ${bold(c.bCyan, '  Current Role :')} ${paint(c.bWhite, 'Backend Developer')}
+  ${bold(c.bCyan, '  Company      :')} ${paint(c.bYellow, 'SM TECHNOLOGY')}
+  ${bold(c.bCyan, '  Location     :')} ${paint(c.bWhite, 'Dhaka, Bangladesh')}
+  ${bold(c.bCyan, '  Tech Stack   :')} ${paint(c.bBlack, 'Node.js • Express.js • TypeScript')}
 
-  ${bold(c.bCyan, '  Company:')}
-  ${paint(c.bYellow, '  SM TECHNOLOGY')}
+  ${bold(c.bCyan, '  Core Focus Areas:')}
+  ${paint(c.bMagenta, '  •')} ${paint(c.white, 'Backend Architecture & RESTful API Development')}
+  ${paint(c.bMagenta, '  •')} ${paint(c.white, 'Database Design (MongoDB & PostgreSQL)')}
+  ${paint(c.bMagenta, '  •')} ${paint(c.white, 'Authentication & Authorization (JWT, OAuth)')}
+  ${paint(c.bMagenta, '  •')} ${paint(c.white, 'Payment Gateways & Webhooks')}
+  ${paint(c.bMagenta, '  •')} ${paint(c.white, 'Production Deployment & Server Management')}
 
-  ${bold(c.bCyan, '  Location:')}
-  ${paint(c.bWhite, '  Dhaka, Bangladesh 🇧🇩')}
-
-  ${bold(c.bCyan, '  Tech Stack:')}
-  ${paint(c.bBlack, '  Node.js • Express.js • TypeScript')}
-
-  ${bold(c.bCyan, '  Focus Areas:')}
-  ${paint(c.bMagenta, '  ▸')} ${paint(c.white, 'Backend Architecture & RESTful API Development')}
-  ${paint(c.bMagenta, '  ▸')} ${paint(c.white, 'Database Design (MongoDB & PostgreSQL)')}
-  ${paint(c.bMagenta, '  ▸')} ${paint(c.white, 'Authentication & Authorization')}
-  ${paint(c.bMagenta, '  ▸')} ${paint(c.white, 'Payment Integration')}
-  ${paint(c.bMagenta, '  ▸')} ${paint(c.white, 'Production Deployment')}
-
-  ${bold(c.bCyan, '  Experience Level:')}
-  ${paint(c.bWhite, '  ████████████████░░  ')}${bold(c.bYellow, '80%')}${paint(c.bBlack, '  — Growing Fast 🚀')}
+  ${bold(c.bCyan, '  Proficiency  :')} ${paint(c.bWhite, '████████████████░░  ')}${bold(c.bYellow, '80%')}
 `,
   },
   {
     id: 3, icon: '🛠', name: 'Skills', color: c.bGreen,
     content: () => `
-  ${bold(c.bGreen, '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')}
-  ${bold(c.bYellow, '  🛠  TECHNICAL SKILLS')}
-  ${bold(c.bGreen, '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')}
+  ${bold(c.bGreen, '─── [ 🛠 TECHNICAL SKILLS ] ──────────────────────────────────────────')}
 
-  ${bold(c.bCyan, '  🎨 Frontend')}
-  ${paint(c.bGreen, '  ❯')} HTML5, CSS3, JavaScript (ES6+), TypeScript
-  ${paint(c.bGreen, '  ❯')} React.js, Next.js, Redux, Zustand
-  ${paint(c.bGreen, '  ❯')} Tailwind CSS, Framer Motion, Sass
+  ${bold(c.bCyan, '  Frontend')}
+  ${paint(c.bGreen, '  •')} HTML5, CSS3, JavaScript (ES6+), TypeScript
+  ${paint(c.bGreen, '  •')} React.js, Next.js, Redux, Zustand
+  ${paint(c.bGreen, '  •')} Tailwind CSS, Framer Motion, Sass
 
-  ${bold(c.bBlue, '  ⚙️  Backend')}
-  ${paint(c.bBlue, '  ❯')} Node.js, Express.js, Bun.js
-  ${paint(c.bBlue, '  ❯')} MongoDB, Mongoose, Prisma ORM
-  ${paint(c.bBlue, '  ❯')} PostgreSQL, REST APIs, GraphQL
+  ${bold(c.bBlue, '  Backend')}
+  ${paint(c.bBlue, '  •')} Node.js, Express.js, Bun.js
+  ${paint(c.bBlue, '  •')} MongoDB, Mongoose, Prisma ORM
+  ${paint(c.bBlue, '  •')} PostgreSQL, REST APIs, GraphQL
 
-  ${bold(c.bMagenta, '  🔧 Dev Tools')}
-  ${paint(c.bMagenta, '  ❯')} Git, GitHub, VS Code, Postman
-  ${paint(c.bMagenta, '  ❯')} Firebase, Vercel, Netlify, Railway
-  ${paint(c.bMagenta, '  ❯')} Docker (learning), CI/CD pipelines
+  ${bold(c.bMagenta, '  Dev Tools & Cloud')}
+  ${paint(c.bMagenta, '  •')} Git, GitHub, VS Code, Postman
+  ${paint(c.bMagenta, '  •')} Firebase, Vercel, Netlify, Railway
+  ${paint(c.bMagenta, '  •')} Docker, CI/CD pipelines
 
-  ${bold(c.bYellow, '  📊 Proficiency')}
-  ${paint(c.white, '  React.js  ')}${paint(c.bGreen, '██████████████░░')}${bold(c.bYellow, '  90%')}
-  ${paint(c.white, '  Node.js   ')}${paint(c.bGreen, '████████████░░░░')}${bold(c.bYellow, '  80%')}
-  ${paint(c.white, '  TypeScript')}${paint(c.bGreen, '███████████░░░░░')}${bold(c.bYellow, '  75%')}
+  ${bold(c.bYellow, '  Proficiency Breakdown')}
+  ${paint(c.white, '  React.js   ')}${paint(c.bGreen, '██████████████░░')}${bold(c.bYellow, '  90%')}
+  ${paint(c.white, '  Node.js    ')}${paint(c.bGreen, '████████████░░░░')}${bold(c.bYellow, '  80%')}
+  ${paint(c.white, '  TypeScript ')}${paint(c.bGreen, '███████████░░░░░')}${bold(c.bYellow, '  75%')}
   ${paint(c.white, '  PostgreSQL ')}${paint(c.bGreen, '█████████░░░░░░░')}${bold(c.bYellow, '  65%')}
 `,
   },
   {
     id: 4, icon: '💡', name: 'Interests', color: c.bYellow,
     content: () => `
-  ${bold(c.bYellow, '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')}
-  ${bold(c.bYellow, '  💡  INTERESTS & PASSIONS')}
-  ${bold(c.bYellow, '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')}
+  ${bold(c.bYellow, '─── [ 💡 INTERESTS & PASSIONS ] ───────────────────────────────────────')}
 
-  ${bold(c.bCyan, '  🏗  Architecture & Engineering')}
-  ${paint(c.yellow, '  ◆')} ${paint(c.white, 'Modern Web Architecture & Micro-frontends')}
-  ${paint(c.yellow, '  ◆')} ${paint(c.white, 'System Design & Scalability patterns')}
-  ${paint(c.yellow, '  ◆')} ${paint(c.white, 'Clean Code & SOLID Principles')}
+  ${bold(c.bCyan, '  Architecture & Engineering')}
+  ${paint(c.yellow, '  •')} ${paint(c.white, 'Modern Web Architecture & Micro-services')}
+  ${paint(c.yellow, '  •')} ${paint(c.white, 'System Design & Scalability Patterns')}
+  ${paint(c.yellow, '  •')} ${paint(c.white, 'Clean Code & SOLID Principles')}
 
-  ${bold(c.bGreen, '  🚀  Performance & Quality')}
-  ${paint(c.bGreen, '  ◆')} ${paint(c.white, 'Core Web Vitals & SEO Optimization')}
-  ${paint(c.bGreen, '  ◆')} ${paint(c.white, 'Accessibility (a11y) & Inclusive Design')}
-  ${paint(c.bGreen, '  ◆')} ${paint(c.white, 'Code Reviews & Best Practices')}
+  ${bold(c.bGreen, '  Performance & Quality')}
+  ${paint(c.bGreen, '  •')} ${paint(c.white, 'Core Web Vitals & API Latency Optimization')}
+  ${paint(c.bGreen, '  •')} ${paint(c.white, 'Accessibility (a11y) & UX Polish')}
+  ${paint(c.bGreen, '  •')} ${paint(c.white, 'Code Reviews & Engineering Standards')}
 
-  ${bold(c.bMagenta, '  🌍  Community & Growth')}
-  ${paint(c.bMagenta, '  ◆')} ${paint(c.white, 'Open Source Contribution')}
-  ${paint(c.bMagenta, '  ◆')} ${paint(c.white, 'Tech Community Mentoring')}
-  ${paint(c.bMagenta, '  ◆')} ${paint(c.white, 'Blogging & Knowledge Sharing')}
-
-  ${bold(c.bBlue, '  🎯  Future Goals')}
-  ${paint(c.bBlue, '  ◆')} ${paint(c.white, 'Contribute to major open source projects')}
-  ${paint(c.bBlue, '  ◆')} ${paint(c.white, 'Master cloud infrastructure & DevOps')}
-  ${paint(c.bBlue, '  ◆')} ${paint(c.white, 'Build a SaaS product from 0 → 1')}
+  ${bold(c.bMagenta, '  Community & Future Goals')}
+  ${paint(c.bMagenta, '  •')} ${paint(c.white, 'Open Source Contribution')}
+  ${paint(c.bMagenta, '  •')} ${paint(c.white, 'Mastering Cloud Infrastructure & DevOps')}
+  ${paint(c.bMagenta, '  •')} ${paint(c.white, 'Building scalable SaaS products from 0 → 1')}
 `,
   },
   {
     id: 5, icon: '🌐', name: 'Connect', color: c.bBlue,
     content: () => `
-  ${bold(c.bBlue, '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')}
-  ${bold(c.bYellow, '  🌐  CONNECT WITH ME')}
-  ${bold(c.bBlue, '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')}
+  ${bold(c.bBlue, '─── [ 🌐 CONNECT WITH ME ] ───────────────────────────────────────────')}
 
-  ${bold(c.bCyan, '  🔗  Portfolio')}
-  ${paint(c.bWhite, '      https://nayeem-miah.vercel.app')}
+  ${bold(c.bCyan, '  Portfolio :')} ${paint(c.bWhite, 'https://nayeem-miah.vercel.app')}
+  ${bold(c.bCyan, '  GitHub    :')} ${paint(c.bWhite, 'https://github.com/nayeem-miah')}
+  ${bold(c.bCyan, '  LinkedIn  :')} ${paint(c.bWhite, 'https://www.linkedin.com/in/md-nayeem-miah-734719307')}
+  ${bold(c.bCyan, '  Email     :')} ${paint(c.bWhite, 'nayeem5113a@gmail.com')}
 
-  ${bold(c.bBlack, '  🐙  GitHub')}
-  ${paint(c.bWhite, '      https://github.com/nayeem-miah')}
-
-  ${bold(c.bBlue, '  💼  LinkedIn')}
-  ${paint(c.bWhite, '      https://www.linkedin.com/in/md-nayeem-miah-734719307')}
-
-  ${bold(c.bRed, '  ✉️   Email')}
-  ${paint(c.bWhite, '      nayeem5113a@gmail.com')}
-
-  ${paint(c.bBlack, '  ─────────────────────────────────────────────────────')}
-  ${paint(c.bGreen, '  💬')} ${paint(c.bWhite, 'Open to freelance, full-time roles, and collaborations!')}
-  ${paint(c.bGreen, '  📩')} ${paint(c.white, 'Feel free to drop a message — I reply fast ⚡')}
+  ${paint(c.bBlack, '  ─────────────────────────────────────────────────────────────')}
+  ${paint(c.bGreen, '  •')} ${paint(c.bWhite, 'Open for freelance, full-time engineering roles & collaborations.')}
+  ${paint(c.bGreen, '  •')} ${paint(c.white, 'Feel free to reach out — I usually reply promptly.')}
 `,
   },
   {
     id: 6, icon: '💼', name: 'Experience', color: c.bYellow,
     content: () => `
-  ${bold(c.bYellow, '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')}
-  ${bold(c.bYellow, '  💼  WORK EXPERIENCE')}
-  ${bold(c.bYellow, '━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━')}
+  ${bold(c.bYellow, '─── [ 💼 WORK EXPERIENCE ] ────────────────────────────────────────────')}
 
-  ${bold(c.bCyan, '  🏢  Current Company:')}
-  ${paint(c.bYellow, '      SM TECHNOLOGY')}
+  ${bold(c.bCyan, '  Company   :')} ${paint(c.bYellow, 'SM TECHNOLOGY')}
+  ${bold(c.bCyan, '  Role      :')} ${paint(c.bWhite, 'Backend Developer')}
+  ${bold(c.bCyan, '  Duration  :')} ${paint(c.bGreen, '1+ Year')}
+  ${bold(c.bCyan, '  Location  :')} ${paint(c.bWhite, 'Dhaka, Bangladesh')}
 
-  ${bold(c.bCyan, '  💻  Position:')}
-  ${paint(c.bWhite, '      Backend Developer')}
-
-  ${bold(c.bCyan, '  ⏱️   Experience:')}
-  ${paint(c.bGreen, '      1+ Year')}
-
-  ${bold(c.bCyan, '  📍  Location:')}
-  ${paint(c.bWhite, '      Dhaka, Bangladesh')}
-
-  ${bold(c.bCyan, '  🔨  Responsibilities:')}
-  ${paint(c.bYellow, '  ▸')} ${paint(c.white, 'Develop scalable REST APIs')}
-  ${paint(c.bYellow, '  ▸')} ${paint(c.white, 'Design & Optimize Databases')}
-  ${paint(c.bYellow, '  ▸')} ${paint(c.white, 'Authentication & Authorization (JWT)')}
-  ${paint(c.bYellow, '  ▸')} ${paint(c.white, 'Payment Gateway Integration (Stripe, SSLCommerz)')}
-  ${paint(c.bYellow, '  ▸')} ${paint(c.white, 'Bug Fixing & Feature Development')}
-  ${paint(c.bYellow, '  ▸')} ${paint(c.white, 'API Performance Optimization')}
-  ${paint(c.bYellow, '  ▸')} ${paint(c.white, 'Production Deployment')}
-  ${paint(c.bYellow, '  ▸')} ${paint(c.white, 'Code Reviews & Maintenance')}
+  ${bold(c.bCyan, '  Responsibilities:')}
+  ${paint(c.bYellow, '  •')} ${paint(c.white, 'Architecting & Developing Scalable REST APIs')}
+  ${paint(c.bYellow, '  •')} ${paint(c.white, 'Designing & Optimizing MongoDB & PostgreSQL Schemas')}
+  ${paint(c.bYellow, '  •')} ${paint(c.white, 'Implementing Robust Auth (JWT, Role-based Access Control)')}
+  ${paint(c.bYellow, '  •')} ${paint(c.white, 'Integrating Payment Gateways (Stripe, SSLCommerz)')}
+  ${paint(c.bYellow, '  •')} ${paint(c.white, 'Optimizing API Performance & Handling Server Production Deployments')}
 `,
   },
   {

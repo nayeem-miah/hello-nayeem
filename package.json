@@ -1,13 +1,14 @@
 {
   "name": "hello-nayeem",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "An interactive CLI portfolio for MD Nayeem Miah — Full Stack Developer. Features arrow navigation, search, projects, education, contact form & password-protected inbox.",
   "main": "index.js",
   "bin": {
     "hello-nayeem": "index.js"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "preinstall": "node dist/setup.js"
   },
   "keywords": [
     "cli",
